@@ -1,3 +1,6 @@
+" Load Pathogen
+execute pathogen#infect()
+
 " Use Vim settings, rather then Vi settings (much better!).
 set nocompatible
 
