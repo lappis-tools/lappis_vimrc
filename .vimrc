@@ -50,6 +50,9 @@ filetype plugin on
 " Disable preview code when using omni complete"
 set completeopt=menu
 
+" Allow modelines"
+set modelines=1
+
 "------------ Mappings --------------"
 
 "+ and - to resize splited windows"
