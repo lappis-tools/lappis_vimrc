@@ -1,4 +1,3 @@
-
 To install just run the install script:
 
 ```
@@ -14,3 +13,4 @@ Also make sure you are using ``xterm-256color`` as your ``TERM``. You can do tha
 ```
 export TERM=xterm-256color
 ```
+
