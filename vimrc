@@ -1,9 +1,3 @@
-" configure tab to work with 4 spaces
-set shiftwidth=4
-set tabstop=8
-set softtabstop=4
-set expandtab
-
 " activate syntax color
 syntax on
 
@@ -13,7 +7,6 @@ filetype indent plugin on
 " filetype off
 set nocompatible
 set smarttab
-set shiftwidth=2
 set autoindent
 set smartindent
 set number
