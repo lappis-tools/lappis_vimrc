@@ -15,6 +15,7 @@ set nocompatible
 set smarttab
 set shiftwidth=2
 set autoindent
+set smartindent
 set number
 set backspace=indent,eol,start
 
