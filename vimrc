@@ -4,6 +4,12 @@ syntax on
 " set to indent by filetype
 filetype indent plugin on
 
+" default tab configuration in case there's no other definition in ftplugin
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 " filetype off
 set nocompatible
 set smarttab
@@ -38,7 +44,7 @@ set paste
 map <C-l> :tabnext <cr>
 map <C-j> :tabprevious <cr>
 
-" Create a navigation 
+" Create a navigation
 map <C-n> :vsp . <bar> vertical resize 30 <cr>
 let g:netrw_liststyle=3
 let g:netrw_chgwin=2
