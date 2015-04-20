@@ -33,7 +33,8 @@ set encoding=UTF-8
 "set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
 set laststatus=2
 set linespace=0
-let g:airline_theme = 'badwolf'
+"let g:airline_theme = 'badwolf'
+let g:airline_theme = 'wombat'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#branch#enabled = 1
