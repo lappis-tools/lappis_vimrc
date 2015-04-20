@@ -39,6 +39,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 
+" Keep git sign column as default (+, -, ~, etc.)
+let g:gitgutter_override_sign_column_highlight = 0
+
 "tab config"
 set ts=4
 setlocal expandtab
