@@ -30,8 +30,10 @@ syn on
 set encoding=UTF-8
 
 "status line"
-set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
+"set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
+let g:airline_powerline_fonts = 1
 set laststatus=2
+set linespace=0
 
 "tab config"
 set ts=4
