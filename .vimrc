@@ -68,11 +68,3 @@ map = <C-W>+
 " Make tab in v mode work like I think it should (keep highlighting):
 vmap <tab> >gv
 vmap <s-tab> <gv
-
-
-"--------------- Setting last updated ---------------"
-" Expand "<!-- DATE -->{-}00:00:00" to current timestamp in English
-" Used in my resume!
-
-:au BufWritePre *.html exe "norm mz"|exe '%s/\(<!-- DATE -->\).\{-\}\d\d:\d\d:\d\d/\1'.strftime("%b %d, %Y %X")."/e"|norm `z
-:au BufWritePre *.html exe "norm mz"|exe '%s/\(data-lastupdate datetime=\"\)\d\d\d\d-\d\d-\d\d/\1'.strftime("%Y-%m-%d")."/e"|norm `z
