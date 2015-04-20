@@ -29,7 +29,7 @@ let c_comment_strings=1
 syn on
 set encoding=UTF-8
 
-"status line"
+" status line
 "set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
 set laststatus=2
 set linespace=0
@@ -38,6 +38,7 @@ let g:airline_theme = 'wombat'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Keep git sign column as default (+, -, ~, etc.)
 let g:gitgutter_override_sign_column_highlight = 0
@@ -71,3 +72,6 @@ map = <C-W>+
 " Make tab in v mode work like I think it should (keep highlighting):
 vmap <tab> >gv
 vmap <s-tab> <gv
+
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
