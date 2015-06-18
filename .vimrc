@@ -42,6 +42,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Keep git sign column as default (+, -, ~, etc.)
 let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_max_signs = 10000
 
 "tab config"
 set ts=4
