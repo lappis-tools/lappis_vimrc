@@ -64,6 +64,8 @@ set completeopt=menu
 " Allow modelines"
 set modelines=1
 
+set spelllang=en,pt_br
+
 "------------ Mappings --------------"
 
 "+ and - to resize splited windows"
