@@ -11,7 +11,8 @@ set background=dark
 " colorscheme elflord
 " colorscheme delek
 " colorscheme desert
-colorscheme default
+" colorscheme default
+colorscheme PaperColor
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
