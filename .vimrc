@@ -67,6 +67,9 @@ set modelines=1
 
 set spelllang=en,pt_br
 
+" vim markdown settings
+let g:vim_markdown_folding_disabled=1
+
 "------------ Mappings --------------"
 
 "+ and - to resize splited windows"
