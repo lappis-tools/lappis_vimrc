@@ -24,5 +24,10 @@ fi
 
 rsync -vr fonts/ "$font_dir"
 
+# Reset font cache on Linux
+if [[ -n `which fc-cache` ]]; then
+  fc-cache -f $font_dir
+fi
+
 echo
 echo "Fonts installed into $font_dir"
