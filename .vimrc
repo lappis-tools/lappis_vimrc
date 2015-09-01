@@ -70,6 +70,9 @@ set spelllang=en,pt_br
 " vim markdown settings
 let g:vim_markdown_folding_disabled=1
 
+" force vim to use 265 colors
+set term=screen-256color
+
 "------------ Mappings --------------"
 
 "+ and - to resize splited windows"
