@@ -86,18 +86,20 @@ set spelllang=en,pt_br
 let g:vim_markdown_folding_disabled=1
 
 " force vim to use 265 colors
-" set term=screen+256color
-" set term=screen-256color
-"set term=screen-bce.konsole
-"if match($TERM, "screen")!=-1
-"  set term=xterm
-"endif
-set term=konsole-256color
+if match($XDG_CURRENT_DESKTOP, "KDE") != -1
+    set term=konsole-256color
+elseif match($XDG_CURRENT_DESKTOP, "gnome") != -1
+    set term=gnome-256color
+elseif match($XDG_CURRENT_DESKTOP, "xfce") != -1
+    set term=xfce
+else
+    set term=term
+endif
 
 " Set column and line highlight
 set cursorcolumn
 set cursorline
-hi CursorLine term=bold ctermfg=Yellow gui=bold guifg=Yellow
+" hi CursorLine term=bold ctermfg=Yellow gui=bold guifg=Yellow
 hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 
 ""------------ Mappings --------------"
