@@ -1,5 +1,5 @@
 " Load Pathogen
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " Use Vim settings, rather then Vi settings (much better!).
 set nocompatible
@@ -33,14 +33,17 @@ set paste
 set background=dark
 
 "color scheme"
-" colorscheme elflord
+colorscheme elflord
 " colorscheme delek
 " colorscheme desert
 " colorscheme default
-colorscheme PaperColor
+"colorscheme PaperColor
   
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
+" Set number
+set number
 
 " status line
 "set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
