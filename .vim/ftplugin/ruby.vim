@@ -1,17 +1,17 @@
-set cf  " Enable error files & error jumping.
-set clipboard+=unnamed  " Yanks go on clipboard instead.
-set history=256  " Number of things to remember in history.
-set autowrite  " Writes on make/shell commands
-set ruler  " Ruler on
-set nu  " Line numbers on
-set nowrap  " Line wrapping off
-set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+" Enable error files & error jumping.
+set cf
+" Number of things to remember in history.
+set history=512
+" Writes on make/shell commands
+set autowrite
+" Ruler on
+set ruler
+" Line wrapping off
+set nowrap
+" Time to wait after ESC (default causes an annoying delay)
+set timeoutlen=250
 " colorscheme vividchalk  " Uncomment this to set a default theme
-
-" Formatting (some of these are for coding in C and C++)
-set ts=2  " Tabs are 2 spaces
-set bs=2  " Backspace over everything in insert mode
-set shiftwidth=2  " Tabs under smart indent
+" Formatting
 set nocp incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
@@ -22,15 +22,16 @@ set smarttab
 set expandtab
 
 " Visual
-set showmatch  " Show matching brackets.
-set mat=5  " Bracket blinking.
+" Show matching brackets.
+set showmatch
+" Bracket blinking.
+set mat=5
 set list
-" Show $ at end of line and trailing space as ~
+" Show $ at end of line and trailing space as
 set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
-set novisualbell  " No blinking .
-set noerrorbells  " No noise.
-set laststatus=2  " Always show status line.
-
-" gvim specific
-set mousehide  " Hide mouse after chars typed
-set mouse=a  " Mouse in all modes
+" No blinking.
+set novisualbell
+" No noise.
+set noerrorbells
+" Always show status line.
+set laststatus=2 
