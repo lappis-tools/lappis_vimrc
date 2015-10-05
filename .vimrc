@@ -28,8 +28,8 @@ set background=dark
 " colorscheme elflord
 " colorscheme delek
 " colorscheme desert
-" colorscheme default
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme default
    
 " status line
 " set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
