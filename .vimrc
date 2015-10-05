@@ -78,7 +78,7 @@ elseif match($XDG_CURRENT_DESKTOP, "GNOME") != -1
 elseif match($XDG_CURRENT_DESKTOP, "XFCE") != -1
   set term=xfce
 else
-  set term=term
+  set term=xterm-256color
 endif
  
 " Set column and line highlight
