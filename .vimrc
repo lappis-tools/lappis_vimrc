@@ -92,3 +92,5 @@ set cursorline
 map <C-n> :vsp . <bar> vertical resize 30 <cr>
 let g:netrw_liststyle=3
 let g:netrw_chgwin=2
+let g:netrw_sort_sequence = '[\/]$,*'
+let g:netrw_banner = 0
