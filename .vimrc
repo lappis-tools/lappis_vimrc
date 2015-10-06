@@ -16,13 +16,6 @@ set smartindent
 set backspace=indent,eol,start
 set number
  
-" highlight ColorColumn ctermbg=darkgray
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
- 
 set wildignore=*.o,*~,*.pyc,*.swp
  
 " Paste behaviour
@@ -35,8 +28,8 @@ set background=dark
 " colorscheme elflord
 " colorscheme delek
 " colorscheme desert
-" colorscheme default
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme default
    
 " status line
 " set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
