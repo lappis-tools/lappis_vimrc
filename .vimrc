@@ -12,6 +12,8 @@ set shiftwidth=2
 set smarttab
 set autoindent
 set smartindent
+syntax on
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set number
@@ -75,7 +77,7 @@ else
 endif
  
 " Set column and line highlight
-set cursorcolumn
+" set cursorcolumn
 set cursorline
 " hi CursorLine term=bold ctermfg=Yellow gui=bold guifg=Yellow
 " hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
