@@ -84,7 +84,11 @@ set cursorline
 
 ""------------ Mappings --------------"
 "" Create tree navigation
-map <C-n> :Lexplore <CR>
+if exists(":Lexplore") >= 0
+  map <C-n> :Lexplore <CR>
+else
+  map <C-n> :Vexplore <CR>
+endif
 let g:netrw_liststyle=3
 let g:netrw_chgwin=2
 let g:netrw_sort_sequence = '[\/]$,*'
