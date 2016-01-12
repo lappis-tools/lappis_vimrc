@@ -99,7 +99,3 @@ let g:netrw_sort_sequence = '[\/]$,*'
 let g:netrw_banner = 0
 let g:netrw_winsize = -28
 let g:netrw_list_hide= '.*\.swp$'
-
-if has("gui_running")
-  set guifont = Hack\ 12
-endif

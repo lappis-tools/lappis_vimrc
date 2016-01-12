@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cp .vimrc ~/.vimrc
+cp .gvimrc ~/.gvimrc
 
 echo
 echo "vimrc installed into $HOME/.vimrc"
