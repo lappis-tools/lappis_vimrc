@@ -1,1 +1,1 @@
-set guifont=Hack\ 12
+set guifont=Hack\ 10
