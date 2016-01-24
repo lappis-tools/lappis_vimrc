@@ -24,13 +24,12 @@ endif
 set backspace=indent,eol,start
 set number
 
+set noswapfile
+
 set wildignore=*.o,*~,*.pyc,*.swp
 
 " Paste behaviour
 set paste
-
-" Set background type
-set background=dark
 
 "color scheme"
 " colorscheme elflord
@@ -38,6 +37,9 @@ set background=dark
 " colorscheme desert
 " colorscheme PaperColor
 colorscheme default
+
+" Set background type
+set background=dark
 
 " status line
 " set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
@@ -52,7 +54,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Keep git sign column as default (+, -, ~, etc.)
 " let g:gitgutter_override_sign_column_highlight = 0
 " let g:gitgutter_max_signs = 10000
-"
 
 "Disable autoindentation"
 set noai
