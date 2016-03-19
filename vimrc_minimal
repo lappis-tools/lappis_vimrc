@@ -1,6 +1,3 @@
-" Load Pathogen
-" execute pathogen#infect()
-
 " Use Vim settings, rather then Vi settings (much better!).
 set nocompatible
 
@@ -42,18 +39,10 @@ colorscheme default
 set background=dark
 
 " status line
-" set statusline=%(%F%m%r%h%w\ [%Y]\ %{&encoding}\ %)%=%(%l,%v\ %LL\ %p%%%)
 set laststatus=2
 set linespace=0
-" let g:airline_theme = 'badwolf'"let g:airline_theme = 'wombat'
-"let g:airline_theme = 'wombat'
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#branch#enabled = 1
-"let g:airline#extensions#tabline#enabled = 1
 
 " Keep git sign column as default (+, -, ~, etc.)
-" let g:gitgutter_override_sign_column_highlight = 0
-" let g:gitgutter_max_signs = 10000
 
 "Disable autoindentation"
 set noai
@@ -84,10 +73,7 @@ else
 endif
 
 " Set column and line highlight
-" set cursorcolumn
 set cursorline
-" hi CursorLine term=bold ctermfg=Yellow gui=bold guifg=Yellow
-" hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 
 ""------------ Mappings --------------"
 "" Create tree navigation
