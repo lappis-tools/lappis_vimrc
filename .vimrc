@@ -56,9 +56,6 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:gitgutter_override_sign_column_highlight = 0
 " let g:gitgutter_max_signs = 10000
 
-"Disable autoindentation"
-set noai
-
 " Enable filetype plugins "
 filetype plugin on
 
@@ -86,7 +83,7 @@ endif
 
 " Set column and line highlight
 " set cursorcolumn
-set cursorline
+" set cursorline
 " hi CursorLine term=bold ctermfg=Yellow gui=bold guifg=Yellow
 " hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 
@@ -143,7 +140,7 @@ endif
 
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
-noremap XX "+x<CR>
+"" noremap XX "+x<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
