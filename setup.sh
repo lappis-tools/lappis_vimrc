@@ -8,6 +8,9 @@ SEPARATOR="=============================================================="
 
 TARGET_VIM="./vimrc_default"
 
+# Print normal message (e.g info messages). This function verifies if stdout
+# is open and print it with color, otherwise print it without color.
+# @param $@ it receives text message to be printed.
 function say()
 {
   message="$@"
@@ -18,6 +21,9 @@ function say()
   fi
 }
 
+# Print error message. This function verifies if stdout is open and print it
+# with color, otherwise print it without color.
+# @param $@ it receives text message to be printed.
 function complain()
 {
   message="$@"
@@ -34,24 +40,32 @@ function help_instructions()
   say "--uninstall   Uninstall vimrc"
 }
 
+# If you already have installed a vim configuration, it is a good idea to
+# remove every kind of configuration file before installing lappis_vimrc.
 function clean_legacy()
 {
-  say "Clear old vim..."
-  trashVim=$(mktemp -d)
+  say "Removing old vimrc..."
+  local trashVim=$(mktemp -d)
+
+  # .vim directory usually have plugins related to vim.
   if test -d $HOME/.vim; then
     mv $HOME/.vim $trashVim
   fi
-  if test -d $HOME/.vimrc; then
+
+  # .vimrc it is the file with vim configuration, let's move it.
+  if test -f $HOME/.vimrc; then
     mv $HOME/.vimrc $trashVim
   fi
 }
 
+# Here we centralize the choose options for installing lappis_vimrc.
 function type_of_installation()
 {
   say "Please, choose:"
   say " -> [d] To default installation"
   say " -> [m] To minimal installation"
   say " -> [a] To abort this operation"
+  # say " -> [i] Interactive installation."
   while true; do
     read -p "Type [m], [d] or [a]: " INPUT
     case $INPUT in
@@ -63,24 +77,26 @@ function type_of_installation()
   done
 }
 
-function install_lappis_vim()
+# Synchronize .vim and .vimrc with repository.
+function synchronize_vim_files()
 {
-  # First clean old vimrc
-  clean_legacy
+  say $SEPARATOR
+  say "vimrc installed into $HOME/.vimrc"
+  say $SEPARATOR
 
   cp $TARGET_VIM ~/.vimrc
-
-	say $SEPARATOR
-  say "vimrc installed into $HOME/.vimrc"
-	say $SEPARATOR
 
   mkdir -p ~/.vim/
   rsync -vr .vim/ ~/.vim
 
-	say $SEPARATOR
+  say $SEPARATOR
   say "Vim plugins installed into $HOME/.vim/"
-	say $SEPARATOR
+  say $SEPARATOR
+}
 
+# We just verify if it is a MacOS system or GNU/Linux.
+function install_font()
+{
   if [[ `uname` == 'Darwin' ]]; then
     # MacOS
     font_dir="$HOME/Library/Fonts"
@@ -97,19 +113,33 @@ function install_lappis_vim()
     fc-cache -f $font_dir
   fi
 
-	say $SEPARATOR
+  say $SEPARATOR
   say "Fonts installed into $font_dir"
-	say $SEPARATOR
+  say $SEPARATOR
 }
 
-# Options
-if test "$1" = '--install'; then
-  type_of_installation
-elif test "$1" = '--uninstall'; then
+function install_lappis_vim()
+{
+  # First clean old vimrc
   clean_legacy
-elif test "$1" = '--help'; then
-  help_instructions
-else
-  complain "Invalid number of arguments"
-  exit 1
-fi
+  # Synchronize of vimfiles
+  synchronize_vim_files
+  # Copy Hack font to the correct place
+  install_font
+}
+
+# ============================================================================
+#                                   Options
+# ============================================================================
+# Options
+case $1 in
+  --install)
+    type_of_installation;;
+  --uninstall)
+    clean_legacy;;
+  --help)
+    help_instructions;;
+  *)
+    complain "Invalid number of arguments"
+    exit 1;;
+esac
