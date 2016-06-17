@@ -1,0 +1,87 @@
+" Use Vim settings, rather then Vi settings (much better!).
+set nocompatible
+
+" Default configuration in case there's no other definition in ftplugin
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set smarttab
+set autoindent
+set smartindent
+syntax on
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+set number
+
+set noswapfile
+
+set wildignore=*.o,*~,*.pyc,*.swp
+
+" Paste behaviour
+set paste
+
+"color scheme"
+" colorscheme elflord
+" colorscheme delek
+" colorscheme desert
+" colorscheme PaperColor
+colorscheme default
+
+" Set background type
+set background=dark
+
+" status line
+set laststatus=2
+set linespace=0
+
+" Keep git sign column as default (+, -, ~, etc.)
+
+"Disable autoindentation"
+set noai
+
+" Enable filetype plugins "
+filetype plugin on
+
+" Disable preview code when using omni complete"
+set completeopt=menu
+
+" Allow modelines
+set modelines=1
+
+" set spelllang=en,pt_br
+
+" vim markdown settings
+let g:vim_markdown_folding_disabled=1
+
+" force vim to use 265 colors
+if match($XDG_CURRENT_DESKTOP, "KDE") != -1
+  set term=konsole-256color
+elseif match($XDG_CURRENT_DESKTOP, "GNOME") != -1
+  set term=gnome-256color
+elseif match($XDG_CURRENT_DESKTOP, "XFCE") != -1
+  set term=xfce
+else
+  set term=xterm-256color
+endif
+
+" Set column and line highlight
+set cursorline
+
+""------------ Mappings --------------"
+"" Create tree navigation
+autocmd VimEnter * if exists(":Lexplore") | exe "map <C-n> :Lexplore <CR>" | else | exe "map <C-n> :Vexplore <CR>" | endif
+
+let g:netrw_liststyle=3
+let g:netrw_chgwin=2
+let g:netrw_sort_sequence = '[\/]$,*'
+let g:netrw_banner = 0
+let g:netrw_winsize = -28
+let g:netrw_list_hide= '.*\.swp$'
