@@ -1,6 +1,8 @@
 " Load Pathogen
 execute pathogen#infect()
 
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " Use Vim settings, rather then Vi settings (much better!).
 set nocompatible
 
@@ -12,7 +14,58 @@ set shiftwidth=2
 set smarttab
 set autoindent
 set smartindent
+set hidden
+let mapleader=","
 syntax on
+
+"jump to beginning of the line
+nmap E $
+nmap B ^
+vmap E $
+vmap B ^
+
+" Use native vim buffers, instead of CtrlP
+nmap <LEADER>l :CtrlPBuffer<CR>
+nmap <LEADER>b :b#<CR>
+nmap <LEADER>bn :bnext<CR>
+nmap <LEADER>bp :bprevious<CR>
+
+"========== LEADER keys ===============
+ 
+"Surround with ''
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>
+
+"Surround with ""
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>
+
+"Surround with ()
+nnoremap <leader>) viw<esc>a) <esc>hbi(<esc>f<space>x
+
+"Surround with []
+nnoremap <leader>] viw<esc>a] <esc>hbi[<esc>f<space>x
+
+nmap <LEADER>f :NERDTreeToggle<CR>
+nmap <LEADER>c :NERDTreeFind<CR>
+nmap <LEADER>q :q<CR>
+nmap <LEADER>w :w<CR>
+nmap <LEADER>a :set list!<CR>
+
+" Save file with sudo permission (nice mapping)
+nmap <LEADER>R :w !sudo tee %<CR>
+nmap <LEADER>x :x<CR>
+nmap <LEADER>p :pwd<CR>
+
+" set current edit file as default directory NICE
+nmap <LEADER>d :lcd %:p:h<CR>
+nmap <LEADER>m :so $MYVIMRC<CR>
+nmap <LEADER>v :vsplit <CR>
+nmap <LEADER>s :split <CR>
+
+" Tabs
+nmap <LEADER>r :reg<CR>
+
+"remove empty spaces
+nmap <LEADER>t :%s/\s\+$//<CR>
 
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -23,19 +76,16 @@ endif
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set number
+set relativenumber
 
 set noswapfile
 
 set wildignore=*.o,*~,*.pyc,*.swp
+let NERDTreeIgnore = ['\.pyc$']
 
 " Paste behaviour
 set paste
 
-"color scheme"
-" colorscheme elflord
-" colorscheme delek
-" colorscheme desert
-" colorscheme PaperColor
 colorscheme default
 
 " Set background type
@@ -81,12 +131,6 @@ else
   set term=xterm-256color
 endif
 
-" Set column and line highlight
-" set cursorcolumn
-" set cursorline
-" hi CursorLine term=bold ctermfg=Yellow gui=bold guifg=Yellow
-" hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
-
 ""------------ Mappings --------------"
 "" Create tree navigation
 autocmd VimEnter * if exists(":Lexplore") | exe "map <C-n> :Lexplore <CR>" | else | exe "map <C-n> :Vexplore <CR>" | endif
@@ -97,6 +141,9 @@ let g:netrw_sort_sequence = '[\/]$,*'
 let g:netrw_banner = 0
 let g:netrw_winsize = -28
 let g:netrw_list_hide= '.*\.swp$'
+set splitright
+set nocursorline
+set nolist
 
 "" Searching
 set hlsearch
@@ -106,21 +153,6 @@ set smartcase
 
 set shell=/bin/sh
 set ruler
-
-"*****************************************************************************
-"" Abbreviations
-"*****************************************************************************
-"" no one is really happy until you have this shortcuts
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
@@ -138,9 +170,9 @@ if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 endif
 
+""Copy to clipboard
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
-"" noremap XX "+x<CR>
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
@@ -167,3 +199,10 @@ augroup vimrc-ruby
   autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
   autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
+
+"========= Navigation stuffs ==================
+let g:NERDTreeWinSize=30
+let g:NERDTreeWinPos="left"
+
+" Ignore some extensions
+set wildignore=*.class,*.zip,*.gif,*.png,*.md,*.pyc,*.swp,*.tar.*,*.pdf
