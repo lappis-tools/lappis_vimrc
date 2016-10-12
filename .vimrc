@@ -15,6 +15,9 @@ set smarttab
 set autoindent
 set smartindent
 set hidden
+set showbreak=↪
+set cursorcolumn
+set cursorline
 let mapleader=","
 syntax on
 
@@ -25,10 +28,6 @@ vmap E $
 vmap B ^
 
 " Use native vim buffers, instead of CtrlP
-nmap <LEADER>l :CtrlPBuffer<CR>
-nmap <LEADER>b :b#<CR>
-nmap <LEADER>bn :bnext<CR>
-nmap <LEADER>bp :bprevious<CR>
 
 "========== LEADER keys ===============
  
@@ -44,28 +43,23 @@ nnoremap <leader>) viw<esc>a) <esc>hbi(<esc>f<space>x
 "Surround with []
 nnoremap <leader>] viw<esc>a] <esc>hbi[<esc>f<space>x
 
-nmap <LEADER>f :NERDTreeToggle<CR>
-nmap <LEADER>c :NERDTreeFind<CR>
-nmap <LEADER>q :q<CR>
-nmap <LEADER>w :w<CR>
-nmap <LEADER>a :set list!<CR>
-
-" Save file with sudo permission (nice mapping)
 nmap <LEADER>R :w !sudo tee %<CR>
-nmap <LEADER>x :x<CR>
-nmap <LEADER>p :pwd<CR>
-
-" set current edit file as default directory NICE
+nmap <LEADER>a :set list!<CR>
+nmap <LEADER>b :b#<CR>
+nmap <LEADER>bn :bnext<CR>
+nmap <LEADER>bp :bprevious<CR>
+nmap <LEADER>c :NERDTreeFind<CR>
 nmap <LEADER>d :lcd %:p:h<CR>
+nmap <LEADER>f :NERDTreeToggle<CR>
+nmap <LEADER>l :CtrlPBuffer<CR>
 nmap <LEADER>m :so $MYVIMRC<CR>
-nmap <LEADER>v :vsplit <CR>
+nmap <LEADER>q :q<CR>
+nmap <LEADER>r :let @+=expand("%:p")<CR>
 nmap <LEADER>s :split <CR>
-
-" Tabs
-nmap <LEADER>r :reg<CR>
-
-"remove empty spaces
 nmap <LEADER>t :%s/\s\+$//<CR>
+nmap <LEADER>v :vsplit <CR>
+nmap <LEADER>w :w<CR>
+nmap <LEADER>x :x<CR>
 
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -142,7 +136,6 @@ let g:netrw_banner = 0
 let g:netrw_winsize = -28
 let g:netrw_list_hide= '.*\.swp$'
 set splitright
-set nocursorline
 set nolist
 
 "" Searching
@@ -206,3 +199,6 @@ let g:NERDTreeWinPos="left"
 
 " Ignore some extensions
 set wildignore=*.class,*.zip,*.gif,*.png,*.md,*.pyc,*.swp,*.tar.*,*.pdf
+
+"""Vim tips
+""":r !date        -> insere o resultado do comando bash no vim
