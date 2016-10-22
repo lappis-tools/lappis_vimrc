@@ -80,7 +80,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " Paste behaviour
 set paste
 
-colorscheme default
+colorscheme molokai
 
 " Set background type
 set background=dark
