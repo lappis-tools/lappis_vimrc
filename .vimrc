@@ -1,7 +1,7 @@
 " Load Pathogen
 execute pathogen#infect()
 
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Use Vim settings, rather then Vi settings (much better!).
 set nocompatible
@@ -43,7 +43,9 @@ nnoremap <leader>) viw<esc>a) <esc>hbi(<esc>f<space>x
 "Surround with []
 nnoremap <leader>] viw<esc>a] <esc>hbi[<esc>f<space>x
 
+
 nmap <LEADER>R :w !sudo tee %<CR>
+nmap <LEADER>r :! adb shell input keyevent 82<CR>
 nmap <LEADER>a :set list!<CR>
 nmap <LEADER>b :b#<CR>
 nmap <LEADER>bn :bnext<CR>
@@ -80,7 +82,8 @@ let NERDTreeIgnore = ['\.pyc$']
 " Paste behaviour
 set paste
 
-colorscheme molokai
+colorscheme badwolf
+
 
 " Set background type
 set background=dark
