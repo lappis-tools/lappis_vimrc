@@ -1,6 +1,26 @@
 " Load Pathogen
 execute pathogen#infect()
 
+" VUNDLE PLUGIN
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'slashmili/alchemist.vim'
+"Plugin 'easymotion/vim-easymotion'
+Plugin 'ekalinin/Dockerfile.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Use Vim settings, rather then Vi settings (much better!).
@@ -16,8 +36,7 @@ set autoindent
 set smartindent
 set hidden
 set showbreak=↪
-set cursorcolumn
-set cursorline
+set spell spelllang=pt
 let mapleader=","
 syntax on
 
@@ -30,7 +49,7 @@ vmap B ^
 " Use native vim buffers, instead of CtrlP
 
 "========== LEADER keys ===============
- 
+
 "Surround with ''
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>
 
@@ -77,13 +96,12 @@ set relativenumber
 set noswapfile
 
 set wildignore=*.o,*~,*.pyc,*.swp
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', 'pycache', '__init__']
 
 " Paste behaviour
 set paste
 
 colorscheme badwolf
-
 
 " Set background type
 set background=dark
@@ -179,6 +197,14 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
+"" Easymotion Plugin mapps
+
+""#let g:EasyMotion_do_mapping = 0
+""#nmap s <Plug>(easymotion-overwin-f)
+""#"nmap s <Plug>(easymotion-overwin-f2)
+""#let g:EasyMotion_smartcase = 1
+
+
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
@@ -205,3 +231,19 @@ set wildignore=*.class,*.zip,*.gif,*.png,*.md,*.pyc,*.swp,*.tar.*,*.pdf
 
 """Vim tips
 """:r !date        -> insere o resultado do comando bash no vim
+
+" Default configuration in case there's no other definition in ftplugin
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set smarttab
+set autoindent
+set smartindent
+set hidden
+set showbreak=↪
+set spell spelllang=pt
+set nocursorline
+set nocursorcolumn
+let mapleader=","
+syntax on
